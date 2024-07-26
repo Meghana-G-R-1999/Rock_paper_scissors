@@ -27,31 +27,15 @@ scissors = '''
 ---.__(___)
 '''
 
-#Write your code below this line 👇
-loop = True
-list = ["rock", "paper", "scissors"]
-user_input = input("I Would Like to select: ").lower()
+#without using functions
 
-def figures(input):
-    if input == "rock":
-        print(rock)
-        return True
-    elif input == "paper":
-        print(paper)
-        return True
-    elif input == "scissors":
-        print(scissors)
-        return True
-    else:
-        print("Invalid input")
-        return False
-
-loop = figures(user_input)  
-
-while loop:
-    computer = random.choice(list)
-    print("Computer selected: "+ computer)
-    figures(computer)
+list = [rock, paper, scissors]
+user_input = int(input("what Would you Like to select?\n0 for rock\n1 for paper\n2 for scissors: "))
+if user_input == 0 or user_input == 1 or user_input == 2:
+    print(list[user_input])
+    computer = random.randint(0,2)
+    print(f"Computer selected: {computer}")
+    print(list[computer])
     if user_input == computer:
         print("Draw")
     elif user_input == "paper" and computer == "rock":
@@ -62,4 +46,6 @@ while loop:
         print("You Won")
     else:
         print("Computer Won")
-    loop = False
+    
+else:
+    print("invalid input")
